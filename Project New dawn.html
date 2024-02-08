@@ -13,7 +13,7 @@
         background-color: black;
         width: fit-content;
         padding: 1px;
-        border-radius: 15px 50px 30px 5px;
+        border-radius: 5px 15px 5px 5px;
       }
       .discord {
         color: white;
@@ -24,15 +24,57 @@
         font: bold;
         object-fit: fill;
       }
+
+      .reasoning {
+        background-color: rgb(154, 163, 157);
+        color: black;
+        width: fit-content;
+        border: none;
+        border-radius: 2px;
+        transition: box-shadow 0.15s;
+        opacity: 1;
+        padding: 5px;
+        margin-top: 5px;
+      } .reasoning:hover {
+        box-shadow: 5px 5px 10px rgb(54, 54, 54);
+        background-color:  rgb(140, 150, 140);
+      }
+
+      .reasoning-text {
+        opacity: 0;
+        transition: opacity, 2s;
+        margin: 5px;
+        color: black;
+        background-color: rgb(154, 163, 157);
+        width: fit-content;
+      }
     </style>
     <title>Project ND Home></title>
   </head>
   <body>
-    <div class="header-container"><h1 class="header">Project New Dawn Home Website</h1>
+    <div class="header-container"><h2 class="header"><strong><em>Project New Dawn Home Website</em></strong></h2>
     <a target="_blank" class="discord" href="https://discord.gg/K3mjpJXj">Our discord server</a></div>
-    <p class="small-text">What is Project New Dawn </p>
-    <p class="small-text">Project New Dawn is a W.I.P site for believers to fellowship together,<br> the main objective here is for God to be magnified and his will be done in earth.</p>
+    <p class="small-text"><strong>What is Project New Dawn</strong> </p>
+    <p class="small-text"><em> New Dawn is a W.I.P site for believers to fellowship together,<br> the main objective here is for God to be magnified and his will be done in earth.</em></p>
+    <button class="reasoning">Why was this made?</button>
+    <div class="reasoning-text small-text"></div>
+	<script>
+    let clicked = false;
+    var reasoningText = document.querySelector('.reasoning-text');
+    document.querySelector('.reasoning').addEventListener('click', () => {
+      
+      if (clicked === false) {
+      clicked = true;
+      reasoningText.innerHTML = "This Project was made with a big purpose, which is the purpose of God. <br> And also to  help believers across the world to unite and fellowship,  grow in faith and persevere during hardships.";
+      reasoningText.style.opacity = 1; 
 
-	<script></script>
+      } else if (clicked === true) {
+        clicked = false;
+        reasoningText.innerHTML = "";
+        reasoningText.style.opacity = 0;
+      }
+    })
+    
+  </script>
   </body>
 </html>
